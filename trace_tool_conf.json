@@ -1,0 +1,56 @@
+{
+	"TRACE-TOOL":
+	{
+		"processing_path":"/aux1/trace-tool/processing",
+		"results_path":"/aux1/trace-tool/results",
+		"log_path":"/aux1/trace-tool/logs"
+	},
+	"BROWSER":
+	{
+		"title": "BROWSER",
+		"collect_entries": false,
+		"path":"/aux1/browser/logs",
+		"prefix":"browser_",
+		"suffix":".log"
+	},
+	"USSDGW":
+	{
+		"title": "USSDGW",
+		"collect_entries": false,
+		"path":"/aux1/ussd/trace",
+		"prefix":"trace",
+		"suffix":".log"
+	},
+	"MAPGW":
+	{
+		"title": "MAPGW",
+		"collect_entries": false,
+		"path":"/aux1/cross_plugin/MAP/trace",
+		"prefix":"cross_plugin_",
+		"suffix":".log"
+	},
+	"CAPGW":
+	{
+		"title": "CAPGW",
+		"collect_entries": false,
+		"path":"/aux1/cross_plugin/CAP/trace",
+		"prefix":"cross_plugin_",
+		"suffix":".log"
+	},
+	"MEDIAGW":
+	{
+		"title": "MEDIAGW",
+		"collect_entries": false,
+		"path":"/aux1/cross_plugin/CAP/trace",
+		"prefix":"cross_plugin_",
+		"suffix":".log"
+	},
+	"CONNECTORS":
+	{
+		"title": "Connectors",
+		"collect_entries": true,
+		"path":"/aux1/occonnectors/logs/{conn_name}",
+		"prefix":"ipcconnector_",
+		"suffix":".log"
+	}
+}

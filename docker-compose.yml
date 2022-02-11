@@ -1,0 +1,57 @@
+version: "3"
+
+networks:
+  extnet:
+    driver: bridge
+    driver_opts:
+      parent: wlp2s0 
+    ipam:
+      config:
+        - subnet: 172.19.0.0/24
+          gateway: 172.19.0.1
+
+services:
+  ussdgw1:
+    container_name: ussdgw1
+    image: rhel7-sshd
+    volumes:
+      - /etc/hosts:/etc/hosts
+      - /aux1/ussdgw1/:/aux1/ussd/trace/
+    networks:
+      extnet:
+        ipv4_address: 172.19.0.31
+    restart: always
+
+  ussdgw2:
+    container_name: ussdgw2
+    image: rhel7-sshd
+    volumes:
+      - /etc/hosts:/etc/hosts
+      - /aux1/ussdgw2/:/aux1/ussd/trace/
+    networks:
+      extnet:
+        ipv4_address: 172.19.0.32
+    restart: always
+
+  br1:
+    container_name: br1
+    image: rhel7-sshd
+    volumes:
+      - /etc/hosts:/etc/hosts
+      - /aux1/br1/:/aux1/browser/logs/
+    networks:
+      extnet:
+        ipv4_address: 172.19.0.33
+    restart: always
+
+  br2:
+    container_name: br2
+    image: rhel7-sshd
+    volumes:
+      - /etc/hosts:/etc/hosts
+      - /aux1/br2/:/aux1/browser/logs/
+    networks:
+      extnet:
+        ipv4_address: 172.19.0.34
+    restart: always
+
